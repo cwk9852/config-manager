@@ -1,0 +1,71 @@
+[
+    {
+        "hostname": "name",
+        "env": "dev",
+        "domain": "devdomain.com",
+        "applications": [
+            {
+                "appName": "app1",
+                "physicalPath": "D:\\wwww\\app1",
+                "authorizationPolicies": [
+                    {
+                        "name": "admin",
+                        "groups": [
+                            {
+                                "name": "groupName1",
+                                "sid": "SID1"
+                            }
+                        ]
+                    }
+                ],
+                "artifacts": {
+                    "dbArtifact": "C:\\temp\\app\\database",
+                    "mainArtifact": "C:\\temp\\app",
+                    "webArtifact": "C:\\temp\\app\\web"
+                },
+                "eventLogSourceName": "Event Log Source Name",
+                "serviceAccountBase": "svcApp",
+                "databases": [
+                    {
+                        "name": "Database Name",
+                        "server": "env-app-1",
+                        "port": "12345",
+                        "sqlAlias": "sqlalias_app",
+                        "schemas": [
+                            {
+                                "name": "Schema1",
+                                "authorizationPolicies": [
+                                    {
+                                        "name": "admin",
+                                        "groups": [
+                                            {
+                                                "name": "groupName1",
+                                                "sid": "SID1"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "firewallRules": [
+                    {
+                        "direction": "inbound",
+                        "port": "443",
+                        "ipAddress": "1.1.1.1"
+                    }
+                ],
+                "webBindings": [
+                    {
+                        "port": "443",
+                        "sslThumbprint": "98340923usjd1fksjdkfjsodjf1skj239ue23jelsndfiu",
+                        "protocol": "https",
+                        "hostname": "app",
+                        "ipAddress": "1.1.1.1"
+                    }
+                ]
+            }
+        ]
+    }
+]
