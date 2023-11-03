@@ -1,0 +1,91 @@
+{
+  "templates": [
+    {
+      "name": "Service Request - DNS Record Management",
+      "conditions": [
+        {
+          "type": "propertyExists",
+          "propertyPath": "hostname"
+        },
+        {
+          "type": "arrayPropertyHasItems",
+          "propertyPath": "applications.webBindings"
+        },
+        {
+          "type": "arrayPropertyHasItems",
+          "propertyPath": "applications.databases"
+        }
+      ]
+    },
+    {
+      "name": "Service Request - Firewall Management",
+      "conditions": [
+        {
+          "type": "arrayPropertyHasItems",
+          "propertyPath": "applications.firewallRules"
+        }
+      ]
+    },
+    {
+      "name": "Service Request - Group Membership",
+      "conditions": [
+        {
+          "type": "arrayPropertyHasItems",
+          "propertyPath": "applications.authorizationPolicies"
+        },
+        {
+          "type": "arrayPropertyHasItems",
+          "propertyPath": "applications.databases.schemas.authorizedUsers"
+        }
+      ]
+    },
+    {
+      "name": "Service Request - Group Policy Management",
+      "conditions": [
+        {
+          "type": "arrayPropertyHasItems",
+          "propertyPath": "applications.authorizationPolicies"
+        }
+      ]
+    },
+    {
+      "name": "Service Request - Provision Database",
+      "conditions": [
+        {
+          "type": "arrayPropertyHasItems",
+          "propertyPath": "applications.databases"
+        }
+      ]
+    },
+    {
+      "name": "Service Request - Provision Group",
+      "conditions": [
+        {
+          "type": "arrayPropertyMissingItems",
+          "propertyPath": "applications.authorizationPolicies.groups.sid"
+        }
+      ]
+    },
+    {
+      "name": "Service Request - Provision Operating System",
+      "conditions": []  
+    },
+    {
+      "name": "Service Request - Provision User Account - Internal",
+      "conditions": [
+        {
+          "type": "arrayPropertyMissingItems",
+          "propertyPath": "applications.authorizationPolicies.groups.sid"
+        },
+        {
+          "type": "arrayPropertyMissingItems",
+          "propertyPath": "applications.databases.schemas.authorizedUsers.sid"
+        }
+      ]
+    },
+    {
+      "name": "Service Request - Snapshot Operating System",
+      "conditions": []  
+    }
+  ]
+}
